@@ -9,9 +9,9 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
   constructor(private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
-  singOut(event: Event) {
+  singOut(event: Event): void {
     event.preventDefault();
 
     this.router.navigate(['/']);

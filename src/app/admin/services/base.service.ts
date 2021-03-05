@@ -11,7 +11,7 @@ export abstract class BaseService {
 
   protected serialize(obj: any): string {
     const str = [];
-    for (let p in obj) {
+    for (const p in obj) {
       if (typeof obj[p] === 'object') {
         str.push(encodeURIComponent(p) + '=' + JSON.stringify(obj[p]));
       } else {
@@ -31,19 +31,19 @@ export abstract class BaseService {
     return this.http.get(endpoint);
   }
 
-  protected post(relativeUrl: string, data: any) {
+  protected post(relativeUrl: string, data: any): Observable<any> {
     return this.http.post(`${this.baseUrl}${relativeUrl}`, data);
   }
 
-  protected patch(relativeUrl: string, data: any) {
+  protected patch(relativeUrl: string, data: any): Observable<any> {
     return this.http.patch(`${this.baseUrl}${relativeUrl}`, data);
   }
 
-  protected put(relativeUrl: string, data: any) {
+  protected put(relativeUrl: string, data: any): Observable<any> {
     return this.http.put(`${this.baseUrl}${relativeUrl}`, data);
   }
 
-  protected del(relativeUrl: string) {
+  protected del(relativeUrl: string): Observable<any> {
     return this.http.delete(`${this.baseUrl}${relativeUrl}`);
   }
 }

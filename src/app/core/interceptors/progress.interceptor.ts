@@ -27,7 +27,7 @@ export class ProgressInterceptor implements HttpInterceptor {
     | HttpUserEvent<any>
   > {
     this.progressBarService.increase();
-    return next.handle(req)
+    return next.handle(req);
     /*
     return next.handle(req)(
       (event) => {

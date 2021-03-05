@@ -18,5 +18,5 @@ export class ShellComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 }

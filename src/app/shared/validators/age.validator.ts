@@ -7,7 +7,7 @@ import {
 } from '@angular/forms'; // Will import the angular forms
 
 @Directive({
-  selector: '[age-validate]',
+  selector: '[appAgeValidate]',
 
   providers: [
     { provide: NG_VALIDATORS, useExisting: AgeValidatorDirective, multi: true },

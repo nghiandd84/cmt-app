@@ -12,9 +12,9 @@ export class LayoutComponent implements OnInit {
 
   constructor(private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
-  isActiveRoute(route: string) {
+  isActiveRoute(route: string): boolean {
     const tree: UrlTree = this.router.parseUrl(route);
     const treeCurrent: UrlTree = this.router.parseUrl(this.router.url);
 

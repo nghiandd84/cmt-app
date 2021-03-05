@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { AbstractControlDirective, AbstractControl } from '@angular/forms';
 
 @Component({
-  selector: 'show-errors',
+  selector: 'app-show-error',
   template: `
     <div *ngIf="shouldShowErrors()" class="validation-errors">
       <div class="error-msg">{{ getError() }}</div>
@@ -12,7 +12,7 @@ import { AbstractControlDirective, AbstractControl } from '@angular/forms';
 })
 export class ShowErrorsComponent {
   private static readonly errorMessages: any = {
-    required: (params: any) => "##FIELD## can't be blank",
+    required: (params: any) => `##FIELD## can't be blank`,
 
     minlength: (params: any) =>
       '##FIELD## should be minimum ' + params.requiredLength + ' characters',
@@ -62,14 +62,14 @@ export class ShowErrorsComponent {
     return '';
   }
 
-  private getMessage(type: string, params: any, control: any) {
+  private getMessage(type: string, params: any, control: any): string {
     let fName = this.getControlName(control) || '';
 
     fName = fName.replace('_', ' ').replace(' id', '').toLowerCase();
 
     fName = fName.replace(/\b\w/g, (l) => l.toUpperCase());
 
-    var msg: any = ShowErrorsComponent.errorMessages[type](params);
+    const msg: any = ShowErrorsComponent.errorMessages[type](params);
 
     return msg.replace('##FIELD##', fName);
   }

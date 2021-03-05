@@ -11,15 +11,15 @@ export class TodoService extends BaseService {
    */
   private relativeUrl = 'tasks';
 
-  constructor(private _http: HttpClient) {
-    super(_http);
+  constructor(private httpClient: HttpClient) {
+    super(httpClient);
   }
 
-  public getAllTodos() {
+  public getAllTodos(): Observable<Task[]> {
     return this.get(this.relativeUrl);
   }
 
-  public create(todo: Task) {
+  public create(todo: Task): Observable<Task> {
     const data = {
       fields: {
         title: {
@@ -37,11 +37,11 @@ export class TodoService extends BaseService {
     return this.get(`${this.relativeUrl}${id.toString()}`);
   }
 
-  public update(todo: Task) {
+  public update(todo: Task): Observable<Task> {
     return this.put(this.relativeUrl, todo);
   }
 
-  public delete(id: number) {
+  public delete(id: number): Observable<boolean> {
     return this.del(`${this.relativeUrl}${id.toString()}`);
   }
 }

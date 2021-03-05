@@ -1,13 +1,13 @@
-import { NgModule, SkipSelf, Optional } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { RouterModule } from "@angular/router";
+import { NgModule, SkipSelf, Optional } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
-import { SharedModule } from "@shared/shared.module";
-import { CoreRoutingModule } from "./core-routing.module";
-import * as fromContainers from "./containers";
-import * as fromServices from "./services";
+import { SharedModule } from '@shared/shared.module';
+import { CoreRoutingModule } from './core-routing.module';
+import * as fromContainers from './containers';
+import * as fromServices from './services';
 
-import { throwIfAlreadyLoaded } from "./common/module-import-guard";
+import { throwIfAlreadyLoaded } from './common/module-import-guard';
 
 
 @NgModule({

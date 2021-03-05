@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router, private fb: FormBuilder) {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
   signIn({
     value,
@@ -26,7 +26,5 @@ export class LoginComponent implements OnInit {
     value: { email: string; password: string };
     valid: boolean;
     dirty: boolean;
-  }) {
-    return null;
-  }
+  }): void {}
 }

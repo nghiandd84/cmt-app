@@ -9,11 +9,11 @@ import {
 
 @Injectable()
 export class AdminGuard implements CanActivate {
-  private token: string = '';
+  private token = '';
 
   constructor(private router: Router) {}
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     // if (this.token) {
     //   return true;
     // } else if (!this.token) {

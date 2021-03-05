@@ -16,7 +16,7 @@ import { Observable } from 'rxjs/internal/Observable';
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
   // private token$: Observable<string>;
-  private authorization: string = '';
+  private authorization = '';
 
   constructor() {}
 
