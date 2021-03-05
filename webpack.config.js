@@ -34,6 +34,8 @@ function patchPostCSS(webpackConfig, tailWindConfig, components = false) {
 }
 
 module.exports = (config) => {
+  // console.log(config);
+  // config.optimization.splitChunks.chunks = 'all';
   const tailWindConfig = require('./tailwind.config.js');
   patchPostCSS(config, tailWindConfig, true);
   return config;
