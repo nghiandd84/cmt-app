@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 4301",
     "build": "ng build --prod",
     "build:stats": "ng build --stats-json",
     "show:stats": "webpack-bundle-analyzer dist/cmt-app/browser/stats.json",
@@ -26,6 +26,7 @@
     "@angular/platform-browser-dynamic": "~11.2.4",
     "@angular/platform-server": "~11.2.4",
     "@angular/router": "~11.2.4",
+    "@angular/service-worker": "~11.2.4",
     "@nguniversal/express-engine": "^11.2.1",
     "express": "^4.15.2",
     "rxjs": "~6.6.0",

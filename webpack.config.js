@@ -34,8 +34,31 @@ function patchPostCSS(webpackConfig, tailWindConfig, components = false) {
 }
 
 module.exports = (config) => {
-  // console.log(config);
+  /*
+  console.log(config);
   // config.optimization.splitChunks.chunks = 'all';
+  config.optimization.splitChunks = {
+    // chunks: 'async',
+    minSize: 10000,
+    maxSize: 20000,
+    minChunks: 1,
+    maxAsyncRequests: 30,
+    maxInitialRequests: 30,
+    enforceSizeThreshold: 50000,
+    cacheGroups: {
+      defaultVendors: {
+        test: /[\\/]node_modules[\\/]/,
+        // priority: -10,
+        reuseExistingChunk: true,
+      },
+      default: {
+        minChunks: 2,
+        // priority: -20,
+        reuseExistingChunk: true,
+      },
+    },
+  };
+  */
   const tailWindConfig = require('./tailwind.config.js');
   patchPostCSS(config, tailWindConfig, true);
   return config;

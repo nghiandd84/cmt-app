@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProgressBarService } from '@core/services';
+import { ProgressBarService, PwaService } from '@core/services';
 
 @Component({
   selector: 'app-shell',
@@ -11,12 +11,15 @@ export class ShellComponent implements OnInit {
   progressBarMode: string | undefined;
   constructor(
     private router: Router,
-    private progressBarService: ProgressBarService
+    private progressBarService: ProgressBarService,
+    private pwaService: PwaService
   ) {
     this.progressBarService.updateProgressBar$.subscribe((mode: string) => {
       this.progressBarMode = mode;
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.pwaService.init();
+  }
 }
