@@ -10,7 +10,9 @@ export class LoginService {
 
   private apiLogin = environment.API_LOGIN;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient
+    ) {}
 
   signIn(email: string, password: string): Observable<any> {
     return this.http.post<Auth>(`${this.apiLogin}`, {

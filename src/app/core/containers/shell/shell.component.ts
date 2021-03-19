@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProgressBarService, PwaService } from '@core/services';
 
@@ -9,6 +9,7 @@ import { ProgressBarService, PwaService } from '@core/services';
 })
 export class ShellComponent implements OnInit {
   progressBarMode: string | undefined;
+  @Input() title: string = '';
   constructor(
     private router: Router,
     private progressBarService: ProgressBarService,
